@@ -19,19 +19,350 @@
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
     </div>
-    <div id="spaces">
+    <div id="basic">
+        <h2>Basic HTML</h2>
         <p>&lt;p&gt; is a paragraph tag</p>
         <br>
         <p>&lt;br&gt; is a break, which is shown as the space above^</p>
         <hr>
         <p>&lt;hr&gt; is a thematic change in content, as shown above^</p>
     </div>
-    <div>
+    <div id="formatting">
+        <h2>Formatting</h2>
         <p>&lt;b&gt; defines <b>bold</b> text</p>
         <p>&lt;i&gt; defines <i>italic</i> text</p>
         <p>&lt;del&gt; defines text that has been <del>deleted</del> from the document</p>
-        <p>&lt;&gt;</p>
-        <p>&lt;&gt;</p>
+        <p>&lt;abbr&gt; defines abbreviated <abbr title="abbreviated">abbr</abbr> text</p>
+        <p>&lt;address&gt; defines an <address>address</address>. You have to make the &lt;br&gt; yourself between each line, but not the first.</p>
+        <p>&lt;bdo&gt; changes the <bdo dir="rtl">direction</bdo> of the text</p>
+        <p>&lt;blockquote&gt; <blockquote>makes a blockquote</blockquote></p>
+        <p>&lt;cite&gt; <cite>cites</cite> the title of a creative work</p>
+        <p>&lt;code&gt; defines a piece of <code>computer code</code>. Browser's monospace font.</p>
+        <p>&lt;dfn&gt; is the <dfn>definition</dfn> element</p>
+        <p>&lt;em&gt; is <em>emphasized</em> text, is used for screen readers to know when to emphasize.</p>
+        <p>&lt;ins&gt; <ins>underlines</ins> text.</p>
+        <p>&lt;kbd&gt; is <kbd>keyboard input</kbd></p>
+        <p>&lt;mark&gt; <mark>highlights</mark> text</p>
+        <p>&lt;meter&gt; displays a gauge: <code>&lt;meter value="2" min="0" max="10"&gt;2 out of 10&lt;/meter&gt;</code> <meter value="2" min="0" max="10">2 out of 10</meter></p>
+        <p>&lt;progress&gt; displays a progress bar: <code>&lt;progress value="32" max="100"&gt;32%&lt;/progress&gt;</code> <progress value="32" max="100">32%</progress></p>
+        <p>&lt;pre&gt; <pre>
+            Text in a pre element
+            is displayed in a fixed-width
+            font, and it preserves
+            both      spaces and
+            line breaks from the code
+            </pre></p>
+        <p>&lt;q&gt; <q>quotes</q> a short text</p>
+        <p>&lt;s&gt; defines a text that is no longer correct: <s>only 5 tickets left!</s> SOLD OUT!</p>
+        <p>&lt;small&gt; defines a <small>small</small> text</p>
+        <p>&lt;strong&gt; defines <strong>important</strong> text</p>
+        <p>&lt;sub&gt; defines <sub>subscripted</sub> text</p>
+        <p>&lt;sup&gt; defines <sup>superscripted</sup> text</p>
+        <div id="template">
+            <p>&lt;template&gt; defines a container for content that should be hidden when the page loads:</p> <br>
+            <a href="#template"><button onclick="showContent()">Show hidden content</button></a>
+
+            <template id="template">
+            <h2>hi im a hidden template</h2>
+            <p>I have a script attached:</p> <br>
+            <pre><code>            &lt;script&gt;
+                function showContent() {
+                let temp = document.getElementsByTagName("template")[0];
+                let clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+                }
+            &lt;/script&gt;</code></pre>
+            </template>
+
+            <script>
+            function showContent() {
+            let temp = document.getElementsByTagName("template")[0];
+            let clon = temp.content.cloneNode(true);
+            document.body.appendChild(clon);
+            }
+            </script>
+        </div>
+        <p>&lt;wbr&gt; This is a veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery<wbr>longwordthatwillbreakatspecific<wbr>placeswhenthebrowserwindowisresized.</p>
+        <br>
+        <div id="formsinput">
+            <h2>Forms and Input</h2>
+            <p>&lt;form&gt; is the parent; its a form for user input, input, label, textarea, button, select, option, optgroup, fieldset, output are children.</p><br>
+            <p>Try to always use a label! The label's "for" is correspondent to the input's "name"</p>
+            <form>
+                <fieldset>
+                    <legend>Types of input:</legend>
+                    <p>legend tag^ and the line around is a fieldset. A legend is like a label, but only used for fieldsets. The fieldset tag is used to group related elements in a form.</p>
+                    <!--
+                    <label for="fname">Label:</label>
+                    <input type="text" id="fname" name="fname" placeholder="input"><br><br>
+                    <input type="submit" value="Submit">
+                    -->
+                    <p>button</p>
+                    <input type="button">
+                    <p>checkbox, label required</p>
+                    <input type="checkbox">
+                    <p>color</p>
+                    <input type="color">
+                    <p>date</p>
+                    <input type="date">
+                    <p>datetime-local</p>
+                    <input type="datetime-local">
+                    <p>email</p>
+                    <input type="email">
+                    <p>file, label required</p>
+                    <input type="file">
+                    <p>hidden</p>
+                    <input type="hidden">
+                    <p>image</p>
+                    <input type="image">
+                    <p>month</p>
+                    <input type="month">
+                    <p>number</p>
+                    <input type="number">
+                    <p>password, label required</p>
+                    <input type="password">
+                    <p>radio, label required</p>
+                    <input type="radio">
+                    <p>range</p>
+                    <input type="range">
+                    <p>reset</p>
+                    <input type="reset">
+                    <p>search</p>
+                    <input type="search">
+                    <p>submit</p>
+                    <input type="submit">
+                    <p>tel</p>
+                    <input type="tel">
+                    <p>text, label required</p>
+                    <input type="text">
+                    <p>time</p>
+                    <input type="time">
+                    <p>url</p>
+                    <input type="url">
+                    <p>week</p>
+                    <input type="week">
+                    <h4>list</h4>
+                    <p>list, instead of type</p>
+                    <input list="browsers" placeholder="datalist">
+                    <datalist id="browsers">
+                        <option value="option1">
+                        <option value="option2">
+                    </datalist>
+                </fieldset>
+                <br>
+
+                <h3>Textarea</h3>
+                <textarea name="textarea" cols="10" rows="5">This is a textarea.</textarea>
+                <br>
+
+                <h3>Button</h3>
+                <button type="button">I'm a button</button>
+                <button type="reset">I'm a reset button</button>
+                <button type="submit">I'm a submit button</button>
+                <br>
+
+                <h3>Select & Option</h3>
+                <select name="selection" placeholder="I'm a selection">
+                    <optgroup label="I'm an optgroup">
+                    <option value="select">I'm a select</option>
+                    <option value="option">I'm an option</option>
+                    </optgroup>
+                </select>
+                <pre>
+                    &lt;select name="selection" placeholder="I'm a selection"&gt;
+                        &lt;optgroup label="I'm an optgroup"&gt;&lt;/optgroup&gt;
+                        &lt;option value="select"&gt;I'm a select&lt;/option&gt;
+                        &lt;option value="option"&gt;I'm an option&lt;/option&gt;
+                        &lt;/select&gt;
+                </pre>
+                <br>
+                <p>&lt;output&gt;</p>
+                <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                    <input type="range" id="a" value="50">
+                    +<input type="number" id="b" value="25">
+                    =<output name="x" for="a b"></output>
+                </form>
+            </form>
+            <br>
+        <div id="images">
+            <h2>Images</h2>
+            <p>&lt;img&gt;</p>
+            <p>&lt;map&gt;</p>
+            <p>&lt;area&gt;</p>
+            <p>&lt;canvas&gt;</p>
+            <p>&lt;figcaption&gt;</p>
+            <p>&lt;figure&gt;</p>
+            <p>&lt;picture&gt;</p>
+            <p>&lt;svg&gt;</p>
+        </div>
+
+        <div id="audioVideo">
+            <h2>Audio / Video</h2>
+            <p>&lt;audio&gt;</p>
+            <p>&lt;source&gt;</p>
+            <p>&lt;track&gt;</p>
+            <p>&lt;video&gt;</p>
+            <p>&lt;&gt;</p>
+        </div>
+
+        <div id="links">
+            <h2>Links</h2>
+            <p>&lt;a&gt;</p>
+            <p>&lt;link&gt;</p>
+            <p>&lt;nav&gt;</p>
+        </div>
+
+        <div id="lists">
+            <h2>Lists</h2>
+            <p>&lt;ul&gt; unordered list</p>
+            <ul>
+                <li>&lt;li&gt;</li>
+                <li>&lt;li&gt;</li>
+            </ul>
+            <p>&lt;ol&gt; ordered list</p>
+            <ol>
+                <li>&lt;li&gt;</li>
+                <li>&lt;li&gt;</li>
+            </ol>
+            <p>&lt;dl&gt; description list</p>
+            <dl>
+                <dt>&lt;dt&gt; term/name</dt>
+                <dd>and &lt;dd&gt; description of a term/name</dd>
+            </dl>
+
+        </div>
+        <div id="tables">
+            <h2>Tables</h2>
+            <p>&lt;table&gt;</p>
+            <p>&lt;colgroup&gt; specifies a group of one or more columns in a table for formatting. <br> Its useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.</p>
+            <p>&lt;col&gt; is the 'li' of the colgroup and uses span to determine how many columns should be affected.</p>
+            <table>
+                <caption>i'm the &lt;caption&gt;</caption>
+                <colgroup>
+                    <col style="background-color:red">
+                    <col style="background-color:yellow">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <p>&lt;tr&gt; row in a table</p>
+                        <th>&lt;th&gt;<br>header cell in a table.<br>thead section. 1.1</th>
+                        <th>&lt;th&gt;<br>header cell in a table.<br>thead section. 1.2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;td&gt;<br>cell in a table.<br>tbody section. 2.1</td>
+                        <td>&lt;td&gt;<br>cell in a table.<br>tbody section. 2.2</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>&lt;td&gt;<br>cell in a table.<br>tfoot section. 3.1</td>
+                        <td>&lt;td&gt;<br>cell in a table.<br>tfoot section. 3.2</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <pre>
+                &lt;table&gt;
+                    &lt;caption&gt;&lt;/caption&gt;
+                    &lt;colgroup&gt;
+                        &lt;col style="background-color:red"&gt;
+                        &lt;col style="background-color:yellow"&gt;
+                    &lt;/colgroup&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;1&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;2&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                    &lt;tfoot&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;3&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tfoot&gt;
+                &lt;/table&gt;
+            </pre>
+
+        </div>
+        <div id="stylesSemantics">
+            <h2>Styles and Semantics</h2>
+            <p>&lt;style&gt;</p>
+            <p>&lt;div&gt;</p>
+            <p>&lt;span&gt;</p>
+            <p>&lt;html&gt;</p>
+            <pre>
+                <p>&lt;head&gt;</p>
+                    
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                    <p>&lt;header&gt;</p>
+                        <p>Introductory content. Logo, links</p>
+                        <p>&lt;img src="" alt=""&gt;</p>
+                        <p>&lt;nav&gt;</p>
+                            <p>&lt;ul&gt;</p>
+                                <p>&lt;li&gt;</p>
+                                    <p>&lt;a href=""&gt;&lt;/a&gt;</p>
+                                <p>&lt;/li&gt;</p>
+                                <p>&lt;li&gt;</p>
+                                    <p>&lt;a href=""&gt;&lt;/a&gt;</p>
+                                <p>&lt;/li&gt;</p>
+                            <p>&lt;/ul&gt;</p>
+                        <p>&lt;/nav&gt;</p>
+                    <p>&lt;/header&gt;</p>
+
+                    <p>&lt;main&gt;</p>
+                    <p>main tags are used for primary content on the website. There should only be one of these per page.</p>
+                        <p>&lt;section&gt;</p>
+                            <p>a section has a semantic purpose, that is shared with all its children</p>
+                            <p>&lt;h2&gt;&lt;/h2&gt;</p>
+                            <p>&lt;p&gt;&lt;/p&gt;</p>
+                        <p>&lt;/section&gt;</p>
+
+                        <p>&lt;section&gt;</p>
+                            <p>&lt;h2&gt;&lt;/h2&gt;</p>
+                            <p>&lt;p&gt;&lt;/p&gt;</p>
+                        <p>&lt;/section&gt;</p>
+
+                        <p>&lt;div&gt;
+                            a div is used for elements that don't share a semantic purpose.
+                            usually used for stylistic purposes. ie. a bar that contains breadcumbs and a button, with two different purposes.
+                        &lt;div&gt;</p>
+
+                        <p>&lt;article&gt;
+                            articles have to make sense by itself. it has to be understood without context. ie. a wikipedia article.
+                            &lt;/article&gt;</p>
+                        <p>&lt;aside&gt;
+                            aside tags are not part of the dominant content, ie. a sidebar.
+                            can contain a &lt;nav&gt;
+                            &lt;/aside&gt;</p>
+                
+                    <p>&lt;/main&gt;</p>
+
+                    <p>&lt;footer&gt;</p>
+                        <p>Terms and conditions, privacy policy, contact information</p>
+                        <p>&lt;ul&gt;</p>
+                            <p>&lt;li&gt;</p>
+                                <p>&lt;a href=""&gt;&lt;/a&gt;</p>
+                            <p>&lt;/li&gt;</p>
+                            <p>&lt;li&gt;</p>
+                                <p>&lt;a href=""&gt;&lt;/a&gt;</p>
+                            <p>&lt;/li&gt;</p>
+                        <p>&lt;/ul&gt;</p>
+                    <p>&lt;/footer&gt;</p>
+                <p>&lt;body&gt;</p>
+            <p>&lt;/html&gt;</p>
+        </pre>
+
+            <p>&lt;details&gt;</p>
+            <p>&lt;dialog&gt;</p>
+            <p>&lt;summary&gt;</p>
+            <p>&lt;data&gt;</p>
+        </div>
+        </div>
     </div>
 </body>
 
