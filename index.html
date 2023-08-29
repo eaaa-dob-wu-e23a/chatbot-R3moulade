@@ -29,11 +29,12 @@
     </div>
     <div id="formatting">
         <h2>Formatting</h2>
+        <p>&lt;span&gt; can be used to style a <span style="color: darkcyan;">piece of text</span> with e.g. style="color: darkcyan;"</p>
         <p>&lt;b&gt; defines <b>bold</b> text</p>
         <p>&lt;i&gt; defines <i>italic</i> text</p>
         <p>&lt;del&gt; defines text that has been <del>deleted</del> from the document</p>
         <p>&lt;abbr&gt; defines abbreviated <abbr title="abbreviated">abbr</abbr> text</p>
-        <p>&lt;address&gt; defines an <address>address</address>. You have to make the &lt;br&gt; yourself between each line, but not the first.</p>
+        <p>&lt;address&gt; defines an <address>address</address>You have to make the &lt;br&gt; yourself between each line, but not the first.</p>
         <p>&lt;bdo&gt; changes the <bdo dir="rtl">direction</bdo> of the text</p>
         <p>&lt;blockquote&gt; <blockquote>makes a blockquote</blockquote></p>
         <p>&lt;cite&gt; <cite>cites</cite> the title of a creative work</p>
@@ -43,8 +44,8 @@
         <p>&lt;ins&gt; <ins>underlines</ins> text.</p>
         <p>&lt;kbd&gt; is <kbd>keyboard input</kbd></p>
         <p>&lt;mark&gt; <mark>highlights</mark> text</p>
-        <p>&lt;meter&gt; displays a gauge: <code>&lt;meter value="2" min="0" max="10"&gt;2 out of 10&lt;/meter&gt;</code> <meter value="2" min="0" max="10">2 out of 10</meter></p>
-        <p>&lt;progress&gt; displays a progress bar: <code>&lt;progress value="32" max="100"&gt;32%&lt;/progress&gt;</code> <progress value="32" max="100">32%</progress></p>
+        <p>&lt;meter&gt; displays a gauge: <meter value="2" min="0" max="10">2 out of 10</meter> <code>&lt;meter value="2" min="0" max="10"&gt;2 out of 10&lt;/meter&gt;</code> </p>
+        <p>&lt;progress&gt; displays a progress bar: <progress value="32" max="100">32%</progress> <code>&lt;progress value="32" max="100"&gt;32%&lt;/progress&gt;</code> </p>
         <p>&lt;pre&gt; <pre>
             Text in a pre element
             is displayed in a fixed-width
@@ -91,7 +92,7 @@
             <form>
                 <fieldset>
                     <legend>Types of input:</legend>
-                    <p>legend tag^ and the line around is a fieldset. A legend is like a label, but only used for fieldsets. The fieldset tag is used to group related elements in a form.</p>
+                    <p>legend tag ^"types of input"^ and the line around is a fieldset. A legend is like a label, but only used for fieldsets. The fieldset tag is used to group related elements in a form.</p>
                     <!--
                     <label for="fname">Label:</label>
                     <input type="text" id="fname" name="fname" placeholder="input"><br><br>
@@ -131,7 +132,7 @@
                     <input type="search">
                     <p>submit</p>
                     <input type="submit">
-                    <p>tel</p>
+                    <p>tel, telephone number</p>
                     <input type="tel">
                     <p>text, label required</p>
                     <input type="text">
@@ -155,6 +156,12 @@
                 <textarea name="textarea" cols="10" rows="5">This is a textarea.</textarea>
                 <br>
 
+                <h3>Details & Summary</h3>
+                <details>
+                    <summary>Details & Summary</summary>
+                    <p>I hide details!</p>
+                </details>
+
                 <h3>Button</h3>
                 <button type="button">I'm a button</button>
                 <button type="reset">I'm a reset button</button>
@@ -173,7 +180,7 @@
                         &lt;optgroup label="I'm an optgroup"&gt;&lt;/optgroup&gt;
                         &lt;option value="select"&gt;I'm a select&lt;/option&gt;
                         &lt;option value="option"&gt;I'm an option&lt;/option&gt;
-                        &lt;/select&gt;
+                    &lt;/select&gt;
                 </pre>
                 <br>
                 <p>&lt;output&gt;</p>
@@ -208,6 +215,7 @@
         <div id="links">
             <h2>Links</h2>
             <p>&lt;a&gt;</p>
+            <p>anchor; &lt;a href=""&gt;&lt;/a&gt; <a href="#">link</a></p>
             <p>&lt;link&gt;</p>
             <p>&lt;nav&gt;</p>
         </div>
@@ -291,76 +299,92 @@
         <div id="stylesSemantics">
             <h2>Styles and Semantics</h2>
             <p>&lt;style&gt;</p>
+            <p>&lt;link rel="stylesheet" href="style.css"&gt;</p>
             <p>&lt;div&gt;</p>
             <p>&lt;span&gt;</p>
             <p>&lt;html&gt;</p>
             <pre>
-                <p>&lt;head&gt;</p>
+                &lt;html&gt;
+                    &lt;head&gt;
+                        
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;header&gt;
+                            Introductory content. Logo, links.
+                            &lt;img src="img/logo.png" alt="logo"&gt;
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;
+                                        &lt;a href=""&gt;&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a href=""&gt;&lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                        &lt;/header&gt;
+
+                        &lt;main&gt;
+                        main tags are used for primary, unique content on the website. There should only be one of these per page.
+                            &lt;section&gt;
+                                a section has a semantic purpose, that is shared with all its children.
+                                &lt;h2&gt;&lt;/h2&gt;
+                                &lt;p&gt;&lt;/p&gt;
+                            &lt;/section&gt;
+
+                            &lt;section&gt;
+                                &lt;h2&gt;&lt;/h2&gt;
+                                &lt;p&gt;&lt;/p&gt;
+                            &lt;/section&gt;
+
+                            &lt;div&gt;
+                                a div is used for elements that don't share a semantic purpose.
+                                usually used for stylistic purposes. e.g. a bar that contains breadcumbs and a button, with two different purposes.
+                            &lt;div&gt;
                     
-                <p>&lt;/head&gt;</p>
-                <p>&lt;body&gt;</p>
-                    <p>&lt;header&gt;</p>
-                        <p>Introductory content. Logo, links</p>
-                        <p>&lt;img src="" alt=""&gt;</p>
-                        <p>&lt;nav&gt;</p>
-                            <p>&lt;ul&gt;</p>
-                                <p>&lt;li&gt;</p>
-                                    <p>&lt;a href=""&gt;&lt;/a&gt;</p>
-                                <p>&lt;/li&gt;</p>
-                                <p>&lt;li&gt;</p>
-                                    <p>&lt;a href=""&gt;&lt;/a&gt;</p>
-                                <p>&lt;/li&gt;</p>
-                            <p>&lt;/ul&gt;</p>
-                        <p>&lt;/nav&gt;</p>
-                    <p>&lt;/header&gt;</p>
+                        &lt;/main&gt;
 
-                    <p>&lt;main&gt;</p>
-                    <p>main tags are used for primary content on the website. There should only be one of these per page.</p>
-                        <p>&lt;section&gt;</p>
-                            <p>a section has a semantic purpose, that is shared with all its children</p>
-                            <p>&lt;h2&gt;&lt;/h2&gt;</p>
-                            <p>&lt;p&gt;&lt;/p&gt;</p>
-                        <p>&lt;/section&gt;</p>
+                        &lt;article&gt;
+                            articles have to make sense by itself. it has to be understood without context. e.g. a wikipedia article.
+                            &lt;/article&gt;
 
-                        <p>&lt;section&gt;</p>
-                            <p>&lt;h2&gt;&lt;/h2&gt;</p>
-                            <p>&lt;p&gt;&lt;/p&gt;</p>
-                        <p>&lt;/section&gt;</p>
-
-                        <p>&lt;div&gt;
-                            a div is used for elements that don't share a semantic purpose.
-                            usually used for stylistic purposes. ie. a bar that contains breadcumbs and a button, with two different purposes.
-                        &lt;div&gt;</p>
-
-                        <p>&lt;article&gt;
-                            articles have to make sense by itself. it has to be understood without context. ie. a wikipedia article.
-                            &lt;/article&gt;</p>
-                        <p>&lt;aside&gt;
-                            aside tags are not part of the dominant content, ie. a sidebar.
+                        &lt;aside&gt;
+                            aside tags are not part of the dominant content, e.g. a sidebar.
                             can contain a &lt;nav&gt;
-                            &lt;/aside&gt;</p>
-                
-                    <p>&lt;/main&gt;</p>
+                        &lt;/aside&gt;
 
-                    <p>&lt;footer&gt;</p>
-                        <p>Terms and conditions, privacy policy, contact information</p>
-                        <p>&lt;ul&gt;</p>
-                            <p>&lt;li&gt;</p>
-                                <p>&lt;a href=""&gt;&lt;/a&gt;</p>
-                            <p>&lt;/li&gt;</p>
-                            <p>&lt;li&gt;</p>
-                                <p>&lt;a href=""&gt;&lt;/a&gt;</p>
-                            <p>&lt;/li&gt;</p>
-                        <p>&lt;/ul&gt;</p>
-                    <p>&lt;/footer&gt;</p>
-                <p>&lt;body&gt;</p>
-            <p>&lt;/html&gt;</p>
+                        &lt;details&gt;
+                            &lt;summary&gt;Details and Summary&lt;/summary&gt;
+                            the &lt;details&gt; tag specifies additional details that the user can open and close on demand.
+                            the &lt;summary&gt; tag defines a visible heading for the details element. The heading can be clicked to view/hide the details.
+                        &lt;/details&gt;
+
+                        &lt;dialog open&gt;
+                            The &lt;dialog&gt; tag defines a dialog box or subwindow.
+                            The element makes it easy to create popup dialogs and modals on a web page.
+                            For it to be visible/active, it needs the "open" attribute.
+                        &lt;/dialog&gt;
+
+                        &lt;data value="325243"&gt;Tomatoes&lt;/data&gt;
+                            The &lt;data&gt; tag is used to add a machine-readable translation of a given content, e.g. a product number.
+                            This element provides both a machine-readable value for data processors, and a human-readable value for rendering in a browser.
+                            Tip: If the content is time- or date-related, use the &lt;time&gt; element instead.
+
+                        &lt;footer&gt;
+                            Terms and conditions, privacy policy, contact information
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a href="/home.html"&gt;Home&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href="/aboutus.html"&gt;About Us&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/footer&gt;
+                    &lt;body&gt;
+                &lt;/html&gt;
         </pre>
 
-            <p>&lt;details&gt;</p>
-            <p>&lt;dialog&gt;</p>
-            <p>&lt;summary&gt;</p>
-            <p>&lt;data&gt;</p>
         </div>
         </div>
     </div>
