@@ -1,3 +1,32 @@
 table, th, td {
     border: 1px solid black;
   }
+  #chatBox {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    outline: black 2px solid;
+    padding: 10px;
+  }
+  #chatWindow {
+    background-color: rgb(192, 192, 192);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .message {
+    background-color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 16px;
+  }
+  .chatbotMessages {
+    width: fit-content;
+    max-width: 90%;
+    align-self: flex-start;
+  }
+  .userMessages {
+    width: fit-content;
+    max-width: 90%;
+    align-self: flex-end;
+  }
