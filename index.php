@@ -3,8 +3,8 @@
     $_SESSION['sessionKey'] = "sessionKey";
 
     $responses = [
-        "Hello" => "Hi there!",
-        "What are you?" => "I'm a robot",
+        "Hi" => "Hello",
+        "What are you?" => "I'm a wizard",
 
     ];
     $userInput = $_GET['userInput'];
@@ -40,7 +40,8 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section id="chatBox-container">
+            <div></div>
             <section id="chatBox">
                 <div>
                     <h2>Chatbot</h2>
