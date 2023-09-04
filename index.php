@@ -1,4 +1,5 @@
 <?php
+    sleep(5);
     session_start();
     $_SESSION['sessionKey'] = "sessionKey";
 
@@ -62,7 +63,8 @@
                 </div>
                 <div>
                     <form action="?" method="get">
-                        <input type="text" name="userInput" id="user-input" placeholder="Type your message here">
+                        <input type="text" maxlength="50" name="userInput" id="user-input" placeholder="Type your message here">
+                        <p id="char-limit"><span id="char-count">0</span>/50</p>
                     </form>
                 </div>
             </section>
@@ -73,4 +75,5 @@
     </main>
     <footer></footer>
 </body>
+<script src="script.js"></script>
 </html>
