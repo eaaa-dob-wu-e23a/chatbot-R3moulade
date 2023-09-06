@@ -1,4 +1,3 @@
-
 let userInput = document.getElementById("user-input");
 let charCount = document.getElementById("char-count");
 let charLimit = document.getElementById("char-limit");
@@ -16,4 +15,5 @@ function updateCharacterCount() {
     else {
         charLimit.style.color = "black";
     }
-};
+  };
+

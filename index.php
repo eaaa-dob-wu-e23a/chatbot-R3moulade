@@ -1,5 +1,5 @@
 <?php
-    sleep(5);
+
     session_start();
     $_SESSION['sessionKey'] = "sessionKey";
 
@@ -8,19 +8,34 @@
         "What are you?" => "I'm a wizard",
 
     ];
-    $userInput = $_GET['userInput'];
+    $userInput = strtolower($_GET['userInput']);
     if(isset($_GET['userInput'])) {
         echo $_GET['userInput'];
     }
 
     $response = "I'm sorry, I don't understand that";
-    
+
+    // Define an array of keywords to match
+    $keywords = ['age', 'how old'];
+
+// If none of the predefined responses were found, check for specific keywords
+if ($response === "I'm sorry, I don't understand that") {
+    $keywords = ['age', 'how old'];
+    foreach ($keywords as $keyword) {
+        if (strpos($userInput, $keyword) !== false) {
+            $answer = "I am 100 years old.";
+            $response = $answer;
+            break; // Stop checking once a keyword is found
+        }
+    }
+}
+if ($response === "I'm sorry, I don't understand that") {
     foreach ($responses as $question => $answer) {
         if (strcasecmp($userInput, $question) === 0) {
             $response = $answer;
             break;
         }
-    }
+    }}
 
     echo $response
 ?>
