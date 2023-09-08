@@ -1,5 +1,5 @@
 <?php
-
+    include("variables.php");
     session_start();
     $_SESSION['sessionKey'] = "sessionKey";
 
@@ -11,9 +11,21 @@
     $userInput = strtolower($_GET['userInput']);
     if(isset($_GET['userInput'])) {
         echo $_GET['userInput'];
+    } else {
+        echo "userInput key not valid";
     }
 
     $response = "I'm sorry, I don't understand that";
+    $question = ""; // Initialize an empty question
+
+    // Check if the user input matches predefined responses and store the question
+foreach ($responses as $q => $answer) {
+    if (strcasecmp($userInput, $q) === 0) {
+        $response = $answer;
+        $question = $q;
+        break;
+    }
+}
 
     // Define an array of keywords to match
     $keywords = ['age', 'how old'];
@@ -29,6 +41,7 @@ if ($response === "I'm sorry, I don't understand that") {
         }
     }
 }
+
 if ($response === "I'm sorry, I don't understand that") {
     foreach ($responses as $question => $answer) {
         if (strcasecmp($userInput, $question) === 0) {
@@ -37,8 +50,16 @@ if ($response === "I'm sorry, I don't understand that") {
         }
     }}
 
-    echo $response
+    echo $response;
+
+    $reply = "";
+    $askFemale = strpos($userInput, "female");
+    if($askFemale !== false) {
+        $reply .= "You're talking about a woman.";
+    };
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -53,6 +74,7 @@ if ($response === "I'm sorry, I don't understand that") {
     <header>
         <nav>
             <p><a href="dictionary.html">Dictionary</a></p>
+            <p><a href="calculator.php">Calculator</a></p>
         </nav>
     </header>
     <main>
@@ -82,10 +104,15 @@ if ($response === "I'm sorry, I don't understand that") {
                         <p id="char-limit"><span id="char-count">0</span>/50</p>
                     </form>
                 </div>
-            </section>
-            <div>
-
+                <div>
+                <details id="int-test">
+                    <summary><?php echo $intVar1 . " + " . $intVar2 ?></summary>
+                    <hr>
+                    <p><?php echo $intResult ?></p>
+                </details>
             </div>
+            </section>
+
         </section>
     </main>
     <footer></footer>
