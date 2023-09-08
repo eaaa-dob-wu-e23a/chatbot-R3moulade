@@ -16,49 +16,6 @@
     } else {
         echo "userInput key not valid";
     }
-/*
-    $response = "I'm sorry, I don't understand that";
-    $question = ""; // Initialize an empty question
-
-    // Check if the user input matches predefined responses and store the question
-foreach ($responses as $q => $answer) {
-    if (strcasecmp($userInput, $q) === 0) {
-        $response = $answer;
-        $question = $q;
-        break;
-    }
-}
-
-    // Define an array of keywords to match
-    $keywords = ['age', 'how old'];
-
-// If none of the predefined responses were found, check for specific keywords
-if ($response === "I'm sorry, I don't understand that") {
-    $keywords = ['age', 'how old'];
-    foreach ($keywords as $keyword) {
-        if (strpos($userInput, $keyword) !== false) {
-            $answer = "I am 100 years old.";
-            $response = $answer;
-            break; // Stop checking once a keyword is found
-        }
-    }
-}
-
-if ($response === "I'm sorry, I don't understand that") {
-    foreach ($responses as $question => $answer) {
-        if (strcasecmp($userInput, $question) === 0) {
-            $response = $answer;
-            break;
-        }
-    }}
-
-    echo $response;
-    
-    switch($userInput) {
-        case "": ;
-    }
-    
-    */
 
     $answer = "Speak english motherfucker";
     $keywords = [
