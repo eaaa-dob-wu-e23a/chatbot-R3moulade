@@ -1,20 +1,21 @@
 <?php
     include("variables.php");
+    $userInput = "";
     session_start();
-    $_SESSION['sessionKey'] = "sessionKey";
 
     $responses = [
         "Hi" => "Hello",
         "What are you?" => "I'm a wizard",
 
     ];
-    $userInput = strtolower($_GET['userInput']);
     if(isset($_GET['userInput'])) {
+        $userInput = strtolower($_GET['userInput']);
         echo $_GET['userInput'];
+
     } else {
         echo "userInput key not valid";
     }
-
+/*
     $response = "I'm sorry, I don't understand that";
     $question = ""; // Initialize an empty question
 
@@ -51,12 +52,25 @@ if ($response === "I'm sorry, I don't understand that") {
     }}
 
     echo $response;
+    */
 
-    $reply = "";
-    $askFemale = strpos($userInput, "female");
-    if($askFemale !== false) {
-        $reply .= "You're talking about a woman.";
-    };
+    $reply = "Speak english motherfucker";
+    $keywords = [
+        "female" => ["female", "woman", "girl", "lady"],
+        "male" => ["male", "man", "boy", "lad"]
+    ];
+
+    //arrayKey = "female", "male" etc
+    //keyword = arrays
+    //key = "female", "woman", "girl", "lady" etc
+    foreach($keywords as $arrayKey => $keyword) {
+        foreach($keyword as $key) {
+            if($key == $userInput) {
+                echo "Type: " . $arrayKey;
+            }
+        }
+    }
+
 ?>
 
 
@@ -88,13 +102,13 @@ if ($response === "I'm sorry, I don't understand that") {
                     <div class="chatbotMessages">
                         <p>Chatbot</p>
                         <div class="chatbotMessage message">
-                            <p><?php echo $answer ?></p>
+                            <p><?php echo $reply ?></p>
                         </div>
                     </div>
                     <div class="userMessages">
                         <p>You</p>
                         <div class="userMessage message">
-                            <p><?php echo $question ?></p>
+                            <p><?php echo $userInput ?></p>
                         </div>
                     </div>
                 </div>
