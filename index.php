@@ -11,6 +11,7 @@
     if(isset($_GET['userInput'])) {
         $userInput = strtolower($_GET['userInput']);
         echo $_GET['userInput'];
+        echo "<br>";
 
     } else {
         echo "userInput key not valid";
@@ -52,21 +53,40 @@ if ($response === "I'm sorry, I don't understand that") {
     }}
 
     echo $response;
+    
+    switch($userInput) {
+        case "": ;
+    }
+    
     */
 
-    $reply = "Speak english motherfucker";
+    $answer = "Speak english motherfucker";
     $keywords = [
         "female" => ["female", "woman", "girl", "lady"],
-        "male" => ["male", "man", "boy", "lad"]
+        "male" => [" male", " man", " boy", " lad"],
+        "age" => ["how old", " age"]
     ];
+
+    $answers = [
+        "female" => "You are talking about a person of the female gender",
+        "male" => "You are talking about a person of the male gender",
+        "age" => "I am as old as time itself"
+    ];
+
 
     //arrayKey = "female", "male" etc
     //keyword = arrays
     //key = "female", "woman", "girl", "lady" etc
     foreach($keywords as $arrayKey => $keyword) {
         foreach($keyword as $key) {
-            if($key == $userInput) {
+            if(strpos($userInput, $key) !== false) {
                 echo "Type: " . $arrayKey;
+                foreach($answers as $category => $answer) {
+                    if ($arrayKey == $category) {
+                        echo $answer;
+                        break;
+                    }
+                }
             }
         }
     }
@@ -102,7 +122,7 @@ if ($response === "I'm sorry, I don't understand that") {
                     <div class="chatbotMessages">
                         <p>Chatbot</p>
                         <div class="chatbotMessage message">
-                            <p><?php echo $reply ?></p>
+                            <p><?php echo $answer ?></p>
                         </div>
                     </div>
                     <div class="userMessages">
