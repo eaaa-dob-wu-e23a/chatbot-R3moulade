@@ -1,8 +1,10 @@
 <?php
         session_start();
+        $sum = "";
         
-        $sum = strtolower($_GET['sum']);
+
         if(isset($_GET['sum'])) {
+            $sum = strtolower($_GET['sum']);
             echo $_GET['sum'];
         }
 
