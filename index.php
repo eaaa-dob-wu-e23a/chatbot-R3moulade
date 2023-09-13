@@ -1,7 +1,33 @@
 <?php
+    session_start();
+    $jsonData = "";
+    if (!isset($_SESSION['jsonData'])) {
+
+        // Modtag JSON-data fra anmodningen
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        // Du kan nu gemme dataen i en sessionvariabel
+        $_SESSION['jsonData'] = $data;
+
+        // Opret et svar (dette er kun et eksempel; du kan tilpasse det)
+        $responseData = [
+        'message' => 'Data modtaget og gemt i sessionen',
+        'data' => $data
+        ];
+
+        // Send svaret som JSON
+        header('Content-Type: application/json');
+        echo json_encode($responseData);
+    } else {
+        echo "Data not found";
+    }
+
+
+
+    
     include("variables.php");
     $userInput = "";
-    session_start();
+    
 
     $responses = [
         "Hi" => "Hello",
@@ -30,13 +56,12 @@
         "age" => "I am as old as time itself"
     ];
 
-
     //arrayKey = "female", "male" etc
     //keyword = arrays
     //key = "female", "woman", "girl", "lady" etc
     foreach($keywords as $arrayKey => $keyword) {
-        foreach($keyword as $key) {
-            if(strpos($userInput, $key) !== false) {
+        foreach($keyword as $value) {
+            if(strpos($userInput, $value) !== false) {
                 echo "Type: " . $arrayKey;
                 foreach($answers as $category => $answer) {
                     if ($arrayKey == $category) {
@@ -107,6 +132,7 @@
         </section>
     </main>
     <footer></footer>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+
 </html>
