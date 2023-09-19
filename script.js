@@ -30,19 +30,29 @@ function updateCharacterCount() {
     //arrayKey = "female", "male" etc
     //keyword = arrays
     //key = "female", "woman", "girl", "lady" etc
-    keywords.forEach(function(arrayKey, keyword) {
-      keyword.forEach(function(value) {
-          if(userInput.includes(value)) {
-              console.log("Type: " + arrayKey);
-              Object.keys(answers).forEach(function(category) {
-                  if (arrayKey == category) {
-                      console.log(answers[category]);
-                      return;
-                  }
-              });
-          }
-      });
-  });
+
+// Iterate through categories and their associated keywords
+for (const arrayKey in keywords) {
+    if (keywords.hasOwnProperty(arrayKey)) {
+        const keyword = keywords[arrayKey];
+        
+        // Iterate through keywords in the current category
+        for (const value of keyword) {
+            if (userInput.includes(value)) {
+                console.log("Type: " + arrayKey);
+                
+                // Iterate through categories and their associated answers
+                for (const category in answers) {
+                    if (answers.hasOwnProperty(category) && arrayKey === category) {
+                        console.log(answers[category]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+};
+
 
   })
   .catch(function (error) {
