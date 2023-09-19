@@ -1,4 +1,5 @@
 <?php
+//SESSION
     session_start();
     $jsonData = "";
     if (!isset($_SESSION['jsonData'])) {
@@ -16,46 +17,23 @@
         ];
 
         // Send svaret som JSON
-        header('Content-Type: application/json');
+
         echo json_encode($responseData);
     } else {
         echo "Data not found";
     }
-
-
-
-    
-    include("variables.php");
     $userInput = "";
     
-
-    $responses = [
-        "Hi" => "Hello",
-        "What are you?" => "I'm a wizard",
-
-    ];
     if(isset($_GET['userInput'])) {
         $userInput = strtolower($_GET['userInput']);
         echo $_GET['userInput'];
         echo "<br>";
-
     } else {
         echo "userInput key not valid";
     }
 
     $answer = "Speak english motherfucker";
-    $keywords = [
-        "female" => ["female", "woman", "girl", "lady"],
-        "male" => [" male", " man", " boy", " lad"],
-        "age" => ["how old", " age"]
-    ];
-
-    $answers = [
-        "female" => "You are talking about a person of the female gender",
-        "male" => "You are talking about a person of the male gender",
-        "age" => "I am as old as time itself"
-    ];
-
+/*
     //arrayKey = "female", "male" etc
     //keyword = arrays
     //key = "female", "woman", "girl", "lady" etc
@@ -71,8 +49,7 @@
                 }
             }
         }
-    }
-
+    }*/
 ?>
 
 
@@ -89,8 +66,8 @@
 <body>
     <header>
         <nav>
-            <p><a href="dictionary.html">Dictionary</a></p>
-            <p><a href="calculator.php">Calculator</a></p>
+            <p><a href="exercises/dictionary.html">Dictionary</a></p>
+            <p><a href="exercises/calculator.php">Calculator</a></p>
         </nav>
     </header>
     <main>
@@ -115,18 +92,11 @@
                     </div>
                 </div>
                 <div>
-                    <form action="?" method="get">
+                    <form action="backendindex.php" method="get">
                         <input type="text" maxlength="50" name="userInput" id="user-input" placeholder="Type your message here">
                         <p id="char-limit"><span id="char-count">0</span>/50</p>
                     </form>
                 </div>
-                <div>
-                <details id="int-test">
-                    <summary><?php echo $intVar1 . " + " . $intVar2 ?></summary>
-                    <hr>
-                    <p><?php echo $intResult ?></p>
-                </details>
-            </div>
             </section>
 
         </section>

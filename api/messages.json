@@ -1,12 +1,12 @@
-{
-    "keywords": {
-      "female": ["female", "woman", "girl", "lady"],
-      "male": [" male", " man", " boy", " lad"],
-      "age": ["how old", " age"]
-    },
-    "answers": {
-      "female": "You are talking about a person of the female gender",
-      "male": "You are talking about a person of the male gender",
-      "age": "I am as old as time itself"
-    }
-  }
+[{
+  "keywords": [{
+    "female": ["female", "woman", "girl", "lady"],
+    "male": [" male", " man", " boy", " lad"],
+    "age": ["how old", " age"]
+  }],
+  "answers": [{
+    "female": "You are talking about a person of the female gender",
+    "male": "You are talking about a person of the male gender",
+    "age": "I am as old as time itself"
+  }]
+}]

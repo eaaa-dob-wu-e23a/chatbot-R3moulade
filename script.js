@@ -16,32 +16,18 @@ function updateCharacterCount() {
         charLimit.style.color = "black";
     }
   };
-/*
-//FETCH JSON DATA
-async function fetchJsonData() {
-const jsonData = 'messages.json';
-// Use the fetch API to make a GET request to the JSON file
-fetch(jsonData)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
+
+
+  //FETCH
+  fetch("backendindex.php")
+  .then(function (response) {
+      return response.json();
   })
-  .then(jsonData => {
-    return jsonData;
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the fetch
-    console.error('Fetch error:', error);
-  });
+  .then(function (data) {
+      console.log(data);
+      let keywords = data;
 
-
-}*/
-
-
-
-//arrayKey = "female", "male" etc
+    //arrayKey = "female", "male" etc
     //keyword = arrays
     //key = "female", "woman", "girl", "lady" etc
     keywords.forEach(function(arrayKey, keyword) {
@@ -58,35 +44,7 @@ fetch(jsonData)
       });
   });
 
-  
-/*
-async function phpFetch() {
-  // Definer URL'en til din PHP-fil
-const phpUrl = 'index.php';
-
-// Opret en anmodningsobjekt med metoden 'POST', overskrifter og JSON-data som anmodningskrop
-const requestOptions = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(fetchJsonData())
-};
-
-// Brug fetch API til at foretage en POST-anmodning til PHP-filen
-fetch(phpUrl, requestOptions)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP-fejl! Status: ${response.status}`);
-    }
-    return response.json();
   })
-  .then(responseData => {
-    // Håndter svaret fra PHP-filen her
-    return responseData;
-  })
-  .catch(error => {
-    // Håndter eventuelle fejl, der opstod under anmodningen
-    console.error('Fetch-fejl:', error);
+  .catch(function (error) {
+      console.log("Error: " + error);
   });
-}*/

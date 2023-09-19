@@ -1,4 +1,5 @@
 // FETCH JSON DATA
+/*
 async function fetchJsonData() {
     const jsonDataUrl = 'messages.json';
   
@@ -27,4 +28,4 @@ async function fetchJsonData() {
       console.error('Error in fetchJsonData:', error);
     });
   
-  fetchJsonData();
+  fetchJsonData();*/
