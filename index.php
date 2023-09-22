@@ -62,18 +62,7 @@
                     <h2>Chatbot</h2>
                 </div>
                 <div id="chatWindow">
-                    <div class="userMessages">
-                        <p>You</p>
-                        <div class="userMessage message">
-                            <p><?php echo $userInput ?></p>
-                        </div>
-                    </div>
-                    <div class="chatbotMessages">
-                        <p>Chatbot</p>
-                        <div class="chatbotMessage message">
-                            <p><?php echo $answer ?></p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div>
                     <form action="backendindex.php" method="get">
