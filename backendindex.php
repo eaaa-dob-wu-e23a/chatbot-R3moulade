@@ -19,7 +19,7 @@ if (file_exists($jsonFile)) {
         
         // Output the JSON-encoded array
         echo json_encode($dataArray);
-        header('location: index.php?userInput=' . $_GET['userInput']);
+       // header('location: index.php?userInput=' . $_GET['userInput']);
         exit;
     } else {
         // Handle the read error

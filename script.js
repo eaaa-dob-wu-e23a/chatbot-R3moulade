@@ -17,44 +17,53 @@ function updateCharacterCount() {
     }
   };
 
+  const form = document.querySelector('form');
 
-  //FETCH
-  fetch("backendindex.php")
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (data) {
-      console.log(data);
-      let keywords = data;
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+  
+    fetch('backendindex.php')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        // Do something with the data
+        let keywords = data.keywords;
+        let answers = data.answers;
 
-    //arrayKey = "female", "male" etc
-    //keyword = arrays
-    //key = "female", "woman", "girl", "lady" etc
-
-// Iterate through categories and their associated keywords
-for (const arrayKey in keywords) {
-    if (keywords.hasOwnProperty(arrayKey)) {
-        const keyword = keywords[arrayKey];
-        
-        // Iterate through keywords in the current category
-        for (const value of keyword) {
-            if (userInput.includes(value)) {
-                console.log("Type: " + arrayKey);
-                
-                // Iterate through categories and their associated answers
-                for (const category in answers) {
-                    if (answers.hasOwnProperty(category) && arrayKey === category) {
-                        console.log(answers[category]);
-                        break;
+        //arrayKey = "female:", "male:" etc
+        //keyword = arrays
+        //key = "female", "woman", "girl", "lady" etc
+    
+    // Iterate through categories and their associated keywords
+    for (const arrayKey in keywords) {
+        if (keywords.hasOwnProperty(arrayKey)) {
+            const keyword = keywords[arrayKey];
+            console.log("keywords[arrayKey]: " + keywords[arrayKey]);
+            
+            // Iterate through keywords in the current category
+            for (const value of keyword) {
+                if (userInput.value.includes(value)) {
+                    console.log("arrayKey: " + arrayKey);
+                    console.log("value: " + value);
+                    console.log("userInput.value: " + userInput.value);
+                    console.log("keyword: " + keyword);
+                    
+                    // Iterate through categories and their associated answers
+                    for (const category in data.answers) {
+                        if (answers.hasOwnProperty(category) && arrayKey === category) {
+                            console.log("answers[category]:" + answers[category]);
+                            break;
+                        }
                     }
                 }
             }
         }
-    }
-};
+    };
 
-
-  })
-  .catch(function (error) {
-      console.log("Error: " + error);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
   });

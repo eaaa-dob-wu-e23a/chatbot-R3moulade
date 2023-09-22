@@ -33,23 +33,7 @@
     }
 
     $answer = "Speak english motherfucker";
-/*
-    //arrayKey = "female", "male" etc
-    //keyword = arrays
-    //key = "female", "woman", "girl", "lady" etc
-    foreach($keywords as $arrayKey => $keyword) {
-        foreach($keyword as $value) {
-            if(strpos($userInput, $value) !== false) {
-                echo "Type: " . $arrayKey;
-                foreach($answers as $category => $answer) {
-                    if ($arrayKey == $category) {
-                        echo $answer;
-                        break;
-                    }
-                }
-            }
-        }
-    }*/
+
 ?>
 
 
@@ -78,16 +62,16 @@
                     <h2>Chatbot</h2>
                 </div>
                 <div id="chatWindow">
-                    <div class="chatbotMessages">
-                        <p>Chatbot</p>
-                        <div class="chatbotMessage message">
-                            <p><?php echo $answer ?></p>
-                        </div>
-                    </div>
                     <div class="userMessages">
                         <p>You</p>
                         <div class="userMessage message">
                             <p><?php echo $userInput ?></p>
+                        </div>
+                    </div>
+                    <div class="chatbotMessages">
+                        <p>Chatbot</p>
+                        <div class="chatbotMessage message">
+                            <p><?php echo $answer ?></p>
                         </div>
                     </div>
                 </div>
