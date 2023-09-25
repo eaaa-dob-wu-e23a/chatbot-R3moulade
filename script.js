@@ -2,7 +2,10 @@ let userInput = document.getElementById("user-input");
 let charCount = document.getElementById("char-count");
 let charLimit = document.getElementById("char-limit");
 
+let botAnswer = "Speak english, motherfucker.";
+
 userInput.addEventListener('input', updateCharacterCount);
+
 
 
 function updateCharacterCount() {
@@ -22,6 +25,7 @@ function updateCharacterCount() {
 
   form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting
+    botAnswer = "Speak english, motherfucker.";
   
     fetch('backendindex.php')
       .then(function(response) {
@@ -57,30 +61,30 @@ function updateCharacterCount() {
                     for (const category in data.answers) {
                         if (answers.hasOwnProperty(category) && arrayKey === category) {
                             console.log("answers[category]:" + answers[category]);
-                                //MAKE A NEW BOT CHAT BUBBLE
-                                // Create new div
-                                let newBotAnswer = `
-                                <div class="chatbotMessages">
-                                    <p>Chatbot</p>
-                                    <div class="chatbotMessage message">
-                                        <p> ${answers[category]} </p>
-                                    </div>
-                                </div>
-                                `;
-                                // Select the .userMessages element
-                                let chatWindow = document.querySelector('#chatWindow');
-
-                                // Append the new div to the .userMessages element
-                                chatWindow.innerHTML += newBotAnswer;
+                            botAnswer = answers[category];
                             break;
                         }
                     }
-                } else {
-                    //code
-                }
+                } 
             }
-        }
+        } 
     };
+
+    let newBotAnswer = `
+    <div class="chatbotMessages">
+        <p>Chatbot</p>
+        <div class="chatbotMessage message">
+            <p> ${botAnswer} </p>
+        </div>
+    </div>
+    `;
+    // Select the .userMessages element
+    let chatWindow = document.querySelector('#chatWindow');
+
+    // Append the new div to the .userMessages element
+    chatWindow.innerHTML += newBotAnswer;
+
+    
     //MAKE A NEW USER CHAT BUBBLE WITH USERINPUT
     // Create new div
     let newUserQuestion = `
@@ -92,10 +96,10 @@ function updateCharacterCount() {
     </div>
     `;
     // Select the .userMessages element
-    let chatWindow = document.querySelector('#chatWindow');
+    let chatWindow1 = document.querySelector('#chatWindow');
 
     // Append the new div to the .userMessages element
-    chatWindow.innerHTML += newUserQuestion;
+    chatWindow1.innerHTML += newUserQuestion;
 
       })
       .catch(function(error) {
