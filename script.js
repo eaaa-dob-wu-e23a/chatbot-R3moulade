@@ -75,6 +75,8 @@ function updateCharacterCount() {
                             break;
                         }
                     }
+                } else {
+                    //code
                 }
             }
         }

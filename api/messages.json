@@ -2,11 +2,13 @@
   "keywords": {
     "female": ["female", "woman", "girl", "lady"],
     "male": [" male", " man", " boy", " lad"],
-    "age": ["how old", " age"]
+    "age": ["how old", " age"],
+    "hello": ["hello", "hi", "hey", "howdy", "greetings", "good morning", "good afternoon", "good evening", "good day", "good night"]
   },
   "answers": {
-    "female": "You are talking about a person of the female gender",
-    "male": "You are talking about a person of the male gender",
-    "age": "I am as old as time itself"
+    "female": "You are talking about a person of the female gender.",
+    "male": "You are talking about a person of the male gender.",
+    "age": "I am as old as time itself.",
+    "hello": "Greetings traveller."
   }
 }
