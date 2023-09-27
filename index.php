@@ -49,13 +49,13 @@
                     <div class="chatbotMessages">
                         <p>Chatbot</p>
                         <div class="chatbotMessage message">
-                            <p><?php echo $answer ?></p>
+                            <p><?php echo $response ?></p>
                         </div>
                     </div>
                     <div class="userMessages">
                         <p>You</p>
                         <div class="userMessage message">
-                            <p><?php echo $question ?></p>
+                            <p><?php echo $userInput ?></p>
                         </div>
                     </div>
                 </div>
