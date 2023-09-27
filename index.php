@@ -65,7 +65,7 @@
                     
                 </div>
                 <div>
-                    <form action="backendindex.php" method="get">
+                    <form>
                         <input type="text" maxlength="50" name="userInput" id="user-input" placeholder="Type your message here">
                         <p id="char-limit"><span id="char-count">0</span>/50</p>
                     </form>

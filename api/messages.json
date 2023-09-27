@@ -3,12 +3,16 @@
     "female": ["female", "woman", "girl", "lady"],
     "male": [" male", " man", " boy", " lad"],
     "age": ["how old", " age"],
-    "hello": ["hello", "hi", "hey", "howdy", "greetings", "good morning", "good afternoon", "good evening", "good day", "good night"]
+    "hello": ["hello", "hi", "hey", "howdy", "greetings", "good morning", "good afternoon", "good evening", "good day", "good night"],
+    "dnd": ["dnd", "dungeons and dragons"],
+    "potion": ["potionseller", "potion"]
   },
   "answers": {
     "female": "You are talking about a person of the female gender.",
     "male": "You are talking about a person of the male gender.",
     "age": "I am as old as time itself.",
-    "hello": "Greetings traveller."
+    "hello": "Greetings, traveller.",
+    "dnd": "Well, I've certainly been in dungeons and have also slain dragons.",
+    "potion": "My potions are too strong for you, traveller."
   }
 }

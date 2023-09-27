@@ -6,7 +6,7 @@ $userInput = "";
 
 // Check if the file exists
 if (file_exists($jsonFile)) {
-    // Read the JSON file content
+    // Read the JSON file content (string)
     $jsonContent = file_get_contents($jsonFile);
 
     // Check if the content was successfully read
@@ -14,12 +14,7 @@ if (file_exists($jsonFile)) {
         // Set the response headers to indicate JSON content
         header('Content-Type: application/json');
         
-        // Decode the JSON content to an array
-        $dataArray = json_decode($jsonContent, true);
-        
-        // Output the JSON-encoded array
-        echo json_encode($dataArray);
-       // header('location: index.php?userInput=' . $_GET['userInput']);
+        echo $jsonContent;
         exit;
     } else {
         // Handle the read error

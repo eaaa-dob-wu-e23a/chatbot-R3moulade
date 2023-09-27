@@ -2,12 +2,12 @@ let userInput = document.getElementById("user-input");
 let charCount = document.getElementById("char-count");
 let charLimit = document.getElementById("char-limit");
 
-let botAnswer = "Speak english, motherfucker.";
+
 
 userInput.addEventListener('input', updateCharacterCount);
 
 
-
+//CHARACTER COUNT
 function updateCharacterCount() {
     let inputText = userInput.value;
     let count = inputText.length;
@@ -21,11 +21,12 @@ function updateCharacterCount() {
     }
   };
 
+  //FORM FETCH EVENTLISTENER
   const form = document.querySelector('form');
-
+  let botAnswer = "Speak english, motherfucker.";
   form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting
-    botAnswer = "Speak english, motherfucker.";
+    botAnswer = "Speak english, mf.";
   
     fetch('backendindex.php')
       .then(function(response) {
@@ -39,7 +40,8 @@ function updateCharacterCount() {
 
         //arrayKey = "female:", "male:" etc
         //keyword = arrays
-        //key = "female", "woman", "girl", "lady" etc
+        //value = "female", "woman", "girl", "lady" etc
+        //category = answers value
     
     // Iterate through categories and their associated keywords
     for (const arrayKey in keywords) {
@@ -56,7 +58,7 @@ function updateCharacterCount() {
                     console.log("userInput.value: " + userInput.value);
                     console.log("keyword: " + keyword);
 
-                    
+                    //categrory = answers value
                     // Iterate through categories and their associated answers
                     for (const category in data.answers) {
                         if (answers.hasOwnProperty(category) && arrayKey === category) {
